@@ -1,0 +1,217 @@
+{
+  "auth": {
+    "user_pool_id": "us-east-1_PRIKQODVJ",
+    "aws_region": "us-east-1",
+    "user_pool_client_id": "2l30o7vkpj4qsundgrehtq4h49",
+    "identity_pool_id": "us-east-1:ce685390-abab-4e5e-a5a9-1d0f309ce7c4",
+    "mfa_methods": [],
+    "standard_required_attributes": [
+      "email"
+    ],
+    "username_attributes": [
+      "email"
+    ],
+    "user_verification_types": [
+      "email"
+    ],
+    "mfa_configuration": "NONE",
+    "password_policy": {
+      "min_length": 8,
+      "require_lowercase": true,
+      "require_numbers": true,
+      "require_symbols": true,
+      "require_uppercase": true
+    },
+    "unauthenticated_identities_enabled": true
+  },
+  "data": {
+    "url": "https://kedt3mndzjdpfk62sive5fqkfy.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_region": "us-east-1",
+    "api_key": "da2-nxqb3dbt6ffo5kenisbfuvn4ce",
+    "default_authorization_type": "AMAZON_COGNITO_USER_POOLS",
+    "authorization_types": [
+      "API_KEY",
+      "AWS_IAM"
+    ],
+    "model_introspection": {
+      "version": 1,
+      "models": {},
+      "enums": {},
+      "nonModels": {
+        "Todo": {
+          "name": "Todo",
+          "fields": {
+            "_id": {
+              "name": "_id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "content": {
+              "name": "content",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            }
+          }
+        },
+        "ListTodoResponse": {
+          "name": "ListTodoResponse",
+          "fields": {
+            "statusCode": {
+              "name": "statusCode",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "todoList": {
+              "name": "todoList",
+              "isArray": true,
+              "type": {
+                "nonModel": "Todo"
+              },
+              "isRequired": false,
+              "attributes": [],
+              "isArrayNullable": true
+            }
+          }
+        },
+        "AddTodoResponse": {
+          "name": "AddTodoResponse",
+          "fields": {
+            "statusCode": {
+              "name": "statusCode",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "todo": {
+              "name": "todo",
+              "isArray": false,
+              "type": {
+                "nonModel": "Todo"
+              },
+              "isRequired": false,
+              "attributes": []
+            }
+          }
+        },
+        "DeleteTodoResponse": {
+          "name": "DeleteTodoResponse",
+          "fields": {
+            "statusCode": {
+              "name": "statusCode",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "count": {
+              "name": "count",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            }
+          }
+        },
+        "UpdatedTodoResponse": {
+          "name": "UpdatedTodoResponse",
+          "fields": {
+            "statusCode": {
+              "name": "statusCode",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "count": {
+              "name": "count",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            }
+          }
+        }
+      },
+      "queries": {
+        "listTodo": {
+          "name": "listTodo",
+          "isArray": false,
+          "type": {
+            "nonModel": "ListTodoResponse"
+          },
+          "isRequired": false
+        }
+      },
+      "mutations": {
+        "addTodo": {
+          "name": "addTodo",
+          "isArray": false,
+          "type": {
+            "nonModel": "AddTodoResponse"
+          },
+          "isRequired": false,
+          "arguments": {
+            "_id": {
+              "name": "_id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": false
+            },
+            "content": {
+              "name": "content",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true
+            }
+          }
+        },
+        "deleteTodo": {
+          "name": "deleteTodo",
+          "isArray": false,
+          "type": {
+            "nonModel": "DeleteTodoResponse"
+          },
+          "isRequired": false,
+          "arguments": {
+            "_id": {
+              "name": "_id",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true
+            }
+          }
+        },
+        "updateTodo": {
+          "name": "updateTodo",
+          "isArray": false,
+          "type": {
+            "nonModel": "UpdatedTodoResponse"
+          },
+          "isRequired": false,
+          "arguments": {
+            "_id": {
+              "name": "_id",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true
+            },
+            "content": {
+              "name": "content",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "version": "1.1"
+}
